@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Shop;
 
+use App\Facades\Cart;
 use Livewire\WithPagination;
 use Livewire\Component;
 use App\Models\Product;
@@ -27,7 +28,10 @@ class Index extends Component
         ]);
     }
 
-    public function mount() {
-
+    public function addToCart($productId)
+    {
+        $product = Product::find($productId);
+        Cart::add($product);
+        $this->emit('addToCart');
     }
 }

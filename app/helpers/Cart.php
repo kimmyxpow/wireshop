@@ -6,21 +6,21 @@ use App\Models\Product;
 
 class Cart 
 {
-    public function __construnt()
+    public function __construct()
     {
-        if ($this->get() === null) {
-            $this->set($this->empty());
+        if (is_null($this->get())) {
+            $this->set(['products' => []]);
         }
     }
 
     public function set($cart)
     {
-        request()->session()->put('cart', $cart);
+        return request()->session()->put('cart', $cart);
     }
 
     public function get()
     {
-        request()->session()->get('cart');
+        return request()->session()->get('cart', $this->empty());
     }
 
     public function empty()
