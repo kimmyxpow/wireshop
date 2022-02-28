@@ -18,4 +18,11 @@ class Cart extends Component
     {
         $this->cart = FacadesCart::get();
     }
+
+    public function removeFromCart($id)
+    {
+        FacadesCart::remove($id);
+        $this->cart = FacadesCart::get();
+        $this->emit('removeFromCart');
+    }
 }

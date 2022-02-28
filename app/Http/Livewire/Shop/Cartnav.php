@@ -9,7 +9,7 @@ class Cartnav extends Component
 {
     public $cartTotal = 0;
 
-    protected $listeners = ['addToCart' => 'updateCartTotal']; 
+    protected $listeners = ['addToCart' => 'updateCartTotal', 'removeFromCart' => 'updateCartTotal']; 
 
     public function mount()
     {

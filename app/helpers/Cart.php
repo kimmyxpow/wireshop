@@ -9,7 +9,7 @@ class Cart
     public function __construct()
     {
         if (is_null($this->get())) {
-            $this->set(['products' => []]);
+            $this->set($this->empty());
         }
     }
 
@@ -40,7 +40,17 @@ class Cart
     public function remove($productId)
     {
         $cart = $this->get();
-        array_splice($cart['products'], array_search($productId, array_column($cart['products'], 'id')));
+        array_splice(
+            $cart['products'],
+            array_search(
+                $productId,
+                array_column(
+                    $cart['products'],
+                    'id'
+                )
+            ),
+            1
+        );
         $this->set($cart);
     }
 
