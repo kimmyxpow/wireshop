@@ -20,7 +20,6 @@
                                         <button wire:click="removeFromCart({{ $product->id }})" class="btn btn-sm btn-danger">Remove</button>
                                     </td>
                                 </tr>
-                                {{ $product->id }}
                             @endforeach
                         </tbody>
                         <tfoot>
