@@ -1,3 +1,3 @@
 <li class="nav-item">
-    <a href="#" class="nav-link">Cart ({{ $cartTotal }})</a>
+    <a href="{{ route('shop.cart') }}" class="nav-link">Cart ({{ $cartTotal }})</a>
 </li>

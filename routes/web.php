@@ -24,3 +24,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/product', App\Http\Livewire\Product\Index::class)->middleware('auth')->name('admin.product');
 
 Route::get('/shop', App\Http\Livewire\Shop\Index::class)->name('shop.index');
+Route::get('/cart', App\Http\Livewire\Shop\Cart::class)->name('shop.cart');
