@@ -86,6 +86,7 @@
             {{ $slot }}
         </main>
     </div>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
     @livewireScripts
 </body>
 </html>
